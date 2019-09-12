@@ -1,0 +1,59 @@
+Eletro:
+package br.edu.unisep.eletro;
+
+public class Eletro {
+	
+	private double potencia;
+	
+	public Eletro() {
+		
+	}
+
+	public Eletro(double potencia) {
+		this.potencia = potencia;
+	}
+	
+	public double calcularValorConsumo(double tempo, double potencia) {
+		return (potencia * tempo) / 1000 * 0.75;
+	}
+
+	public double getPotencia() {
+		return potencia;
+	}
+	
+}
+
+EletroApp:
+package br.edu.unisep.app;
+
+import java.util.Scanner;
+
+import br.edu.unisep.eletro.Eletro;
+
+public class EletroApp {
+	
+	private Scanner sc = new Scanner(System.in);
+	private Eletro el = new Eletro();
+	
+	public void obterDados() {
+		System.out.println("Informe o tempo a maquina ficou ligada(em horas): ");
+		var tempo = sc.nextDouble();
+		System.out.println("Informe a potencia da maquina: ");
+		var potencia = sc.nextDouble();
+		
+		System.out.printf("Serão gastos: R$ %.2f", el.calcularValorConsumo(tempo, potencia));
+	}
+
+}
+
+Main:
+package br.edu.unisep.app;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		var app = new EletroApp();
+		app.obterDados();
+	}
+
+}
