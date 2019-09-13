@@ -9,3 +9,5 @@ Então remova a pasta localmente: $ git rm -r Landing Email.
 Agora faça um commit das modificações: $ git commit -m "Remove pastas Landing e Email"
 
 Sincronize com repositório remoto: $ git push origin master
+
+Comandos: https://gist.github.com/leocomelli/2545add34e4fec21ec16
